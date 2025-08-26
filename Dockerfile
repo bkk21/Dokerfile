@@ -41,12 +41,12 @@ RUN pip3 install --no-cache-dir --upgrade pip \
  && pip3 install --no-cache-dir \
     fastapi uvicorn[standard] streamlit requests pydantic python-dotenv psycopg2-binary
 
-# 보기 좋은 프롬프트 & ls 색상
+# 색상
 RUN echo 'export PS1="\[\033[1;32m\]\u@\h\[\033[0m\]:\[\033[1;34m\]\w\[\033[0m\]\[\033[1;31m\]\$\[\033[0m\] "' >> /root/.bashrc \
  && echo 'eval "$(dircolors -b)"' >> /root/.bashrc \
  && echo 'alias ls="ls --color=auto"' >> /root/.bashrc
 
-# 참고: 내부 포트
+# 내부 포트
 EXPOSE 8501 8000 5432
 
 # 기본은 bash로 진입(수동 실행 플로우)
